@@ -227,9 +227,9 @@ QSize QTermWidget::sizeHint() const
     return size;
 }
 
-void QTermWidget::setTerminalSizeHint(bool on)
+void QTermWidget::setTerminalSizeHint(bool enabled)
 {
-    m_impl->m_terminalDisplay->setTerminalSizeHint(on);
+    m_impl->m_terminalDisplay->setTerminalSizeHint(enabled);
 }
 
 bool QTermWidget::terminalSizeHint()
@@ -379,11 +379,11 @@ void QTermWidget::setTerminalBackgroundMode(int mode)
     m_impl->m_terminalDisplay->setBackgroundMode((Konsole::BackgroundMode)mode);
 }
 
-void QTermWidget::setShellProgram(const QString &progname)
+void QTermWidget::setShellProgram(const QString &program)
 {
     if (!m_impl->m_session)
         return;
-    m_impl->m_session->setProgram(progname);
+    m_impl->m_session->setProgram(program);
 }
 
 void QTermWidget::setWorkingDirectory(const QString& dir)
@@ -672,14 +672,14 @@ QString QTermWidget::selectedText(bool preserveLineBreaks)
     return m_impl->m_terminalDisplay->screenWindow()->screen()->selectedText(preserveLineBreaks);
 }
 
-void QTermWidget::setMonitorActivity(bool monitor)
+void QTermWidget::setMonitorActivity(bool enabled)
 {
-    m_impl->m_session->setMonitorActivity(monitor);
+    m_impl->m_session->setMonitorActivity(enabled);
 }
 
-void QTermWidget::setMonitorSilence(bool monitor)
+void QTermWidget::setMonitorSilence(bool enabled)
 {
-    m_impl->m_session->setMonitorSilence(monitor);
+    m_impl->m_session->setMonitorSilence(enabled);
 }
 
 void QTermWidget::setSilenceTimeout(int seconds)
@@ -750,9 +750,9 @@ bool QTermWidget::isTitleChanged() const
     return m_impl->m_session->isTitleChanged();
 }
 
-void QTermWidget::setAutoClose(bool autoClose)
+void QTermWidget::setAutoClose(bool enabled)
 {
-    m_impl->m_session->setAutoClose(autoClose);
+    m_impl->m_session->setAutoClose(enabled);
 }
 
 void QTermWidget::cursorChanged(Konsole::Emulation::KeyboardCursorShape cursorShape, bool blinkingCursorEnabled)

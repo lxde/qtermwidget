@@ -62,7 +62,7 @@ public:
     QSize sizeHint() const override;
 
     // expose TerminalDisplay::TerminalSizeHint, setTerminalSizeHint
-    void setTerminalSizeHint(bool on);
+    void setTerminalSizeHint(bool enabled);
     bool terminalSizeHint();
 
     //start shell program if it was not started in constructor
@@ -94,7 +94,7 @@ public:
     void setEnvironment(const QStringList & environment);
 
     //  Shell program, default is /bin/bash
-    void setShellProgram(const QString & progname);
+    void setShellProgram(const QString & program);
 
     //working directory
     void setWorkingDirectory(const QString & dir);
