@@ -468,6 +468,7 @@ void QTermWidget::setColorScheme(const QString& origName)
     ColorEntry table[TABLE_COLORS];
     cs->getColorTable(table);
     m_impl->m_terminalDisplay->setColorTable(table);
+    m_impl->m_session->setDarkBackground(cs->hasDarkBackground());
 }
 
 QStringList QTermWidget::availableColorSchemes()
